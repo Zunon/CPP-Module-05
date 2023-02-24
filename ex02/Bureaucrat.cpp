@@ -27,8 +27,9 @@ Bureaucrat::Bureaucrat(const char *name,  unsigned char grade):
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other) {
-	if (this != &other)
+	if (this != &other) {
 		_grade = other._grade;
+	}
 	return (*this);
 }
 

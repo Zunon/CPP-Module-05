@@ -37,6 +37,6 @@ class Bureaucrat {
 	};
 };
 
-std::ostream			&operator<< (std::ostream &, const Bureaucrat &);
+std::ostream	&operator<< (std::ostream &, const Bureaucrat &);
 
 #endif //CPP_MODULE_05_BUREAUCRAT_HPP
