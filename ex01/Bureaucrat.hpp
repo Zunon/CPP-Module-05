@@ -6,6 +6,7 @@
 # define CPP_MODULE_05_BUREAUCRAT_HPP
 # include <string>
 # include <iostream>
+# include "Form.hpp"
 
 /**
  * @brief Bureaucrat class
@@ -25,6 +26,9 @@ class Bureaucrat {
 		~Bureaucrat (void);
 		std::string 			getName (void) const;
 		int						getGrade (void) const;
+		void					incrementGrade (void);
+		void					decrementGrade (void);
+		bool					signForm (Form &);
 
 	class GradeTooHighException: public std::exception {
 		public:
