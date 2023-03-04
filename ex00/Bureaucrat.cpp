@@ -55,3 +55,15 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
 		<< bureaucrat.getGrade();
 	return (out);
 }
+
+void	Bureaucrat::incrementGrade(void) {
+	if (_grade == 1)
+		throw GradeTooHighException();
+	_grade--;
+}
+
+void	Bureaucrat::decrementGrade(void) {
+	if (_grade == 150)
+		throw GradeTooLowException();
+	_grade++;
+}
