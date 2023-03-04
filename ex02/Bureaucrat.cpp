@@ -56,3 +56,27 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
 		<< bureaucrat.getGrade();
 	return (out);
 }
+
+void	Bureaucrat::incrementGrade(void) {
+	if (_grade == 1)
+		throw GradeTooHighException();
+	_grade--;
+}
+
+void	Bureaucrat::decrementGrade(void) {
+	if (_grade == 150)
+		throw GradeTooLowException();
+	_grade++;
+}
+
+bool	Bureaucrat::signForm(AForm &form) {
+	try {
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+		return (true);
+	} catch (GradeTooLowException &e) {
+		std::cout << _name << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
+		return (false);
+	}
+}
