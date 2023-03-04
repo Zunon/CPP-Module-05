@@ -5,9 +5,19 @@
 #ifndef CPP_MODULE_05_SHRUBBERYCREATIONFORM_HPP
 #define CPP_MODULE_05_SHRUBBERYCREATIONFORM_HPP
 
+#include "AForm.hpp"
+#include <fstream>
 
-class ShrubberyCreationForm {
-
+class ShrubberyCreationForm : public AForm {
+	const std::string		_target;
+public:
+	ShrubberyCreationForm(void);
+	ShrubberyCreationForm(const ShrubberyCreationForm &);
+	ShrubberyCreationForm(const std::string &);
+	ShrubberyCreationForm(const char *);
+	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &);
+	~ShrubberyCreationForm(void);
+	void					execute(const Bureaucrat &) const;
 };
 
 

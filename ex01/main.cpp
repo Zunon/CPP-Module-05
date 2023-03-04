@@ -1,6 +1,7 @@
 //
 // Created by kalmheir on 2/20/23.
 //
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
