@@ -80,3 +80,15 @@ bool	Bureaucrat::signForm(AForm &form) {
 		return (false);
 	}
 }
+
+bool	Bureaucrat::executeForm(AForm &form) {
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+		return (true);
+	} catch (GradeTooLowException &e) {
+		std::cout << _name << " couldn't execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+		return (false);
+	}
+}

@@ -1,6 +1,6 @@
 NAME	:= bureaucrats
 SRCS	:=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-			RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 CC		:= c++
 CFLAGS	:= -Wall -Wextra -Werror -std=c++98

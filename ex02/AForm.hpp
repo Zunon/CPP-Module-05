@@ -2,10 +2,12 @@
 // Created by Khalifa Almheiri on 2/24/23.
 //
 
-#ifndef CPP_MODULE_05_FORM_HPP
-#define CPP_MODULE_05_FORM_HPP
+#ifndef CPP_MODULE_05_AFORM_HPP
+#define CPP_MODULE_05_AFORM_HPP
 #include <string>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class AForm {
 		const std::string	_name;
@@ -35,7 +37,12 @@ class AForm {
 		public:
 			const char	*what(void) const throw();
 	};
+
+	class FormNotSignedException: public std::exception {
+		public:
+			const char	*what(void) const throw();
+	};
 };
 
 std::ostream	&operator<< (std::ostream &, const AForm &);
-#endif //CPP_MODULE_05_FORM_HPP
+#endif //CPP_MODULE_05_AFORM_HPP

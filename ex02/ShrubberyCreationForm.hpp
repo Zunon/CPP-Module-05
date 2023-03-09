@@ -7,17 +7,17 @@
 
 #include "AForm.hpp"
 #include <fstream>
-
+#define TREE_FILE "trees.txt"
 class ShrubberyCreationForm : public AForm {
-	const std::string		_target;
+	std::string				_target;
 public:
-	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(const ShrubberyCreationForm &);
-	ShrubberyCreationForm(const std::string &);
-	ShrubberyCreationForm(const char *);
-	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &);
-	~ShrubberyCreationForm(void);
-	void					execute(const Bureaucrat &) const;
+	ShrubberyCreationForm (void);
+	ShrubberyCreationForm (const ShrubberyCreationForm &);
+	ShrubberyCreationForm (const std::string &);
+	ShrubberyCreationForm (const char *);
+	ShrubberyCreationForm	&operator= (const ShrubberyCreationForm &);
+	~ShrubberyCreationForm (void);
+	void					execute (const Bureaucrat &) const;
 };
 
 

@@ -8,6 +8,7 @@
 # include <iostream>
 # include "AForm.hpp"
 
+class AForm;
 /**
  * @brief Bureaucrat class
  * @details Bureaucrat class
@@ -29,6 +30,7 @@ class Bureaucrat {
 		void					incrementGrade (void);
 		void					decrementGrade (void);
 		bool					signForm (AForm &);
+		bool					executeForm (AForm &);
 
 	class GradeTooHighException: public std::exception {
 		public:

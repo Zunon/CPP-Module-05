@@ -28,5 +28,22 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
-	// TODO
+	if (!getIsSigned())
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > getGradeToExecute())
+		throw AForm::GradeTooLowException();
+	std::ofstream file;
+	std::ifstream tree;
+	std::string filename = _target + "_shrubbery";
+	tree.open(TREE_FILE);
+	file.open(filename.c_str());
+	if (tree.is_open() && file.is_open()) {
+		std::string line;
+		while (getline(tree, line))
+			file << line << std::endl;
+	}
+	else
+		throw "Error opening file";
+	file.close();
+	tree.close();
 }
