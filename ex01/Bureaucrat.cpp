@@ -78,5 +78,9 @@ bool	Bureaucrat::signForm(Form &form) {
 		std::cout << _name << " couldn't sign " << form.getName()
 				  << " because " << e.what() << std::endl;
 		return (false);
+	} catch (GradeTooHighException &e) {
+		std::cout << _name << " couldn't sign " << form.getName()
+				  << " because " << e.what() << std::endl;
+		return (false);
 	}
 }
