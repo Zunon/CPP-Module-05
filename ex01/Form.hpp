@@ -7,6 +7,8 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
 		const std::string	_name;
 		bool				_isSigned;

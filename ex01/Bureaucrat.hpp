@@ -8,6 +8,8 @@
 # include <iostream>
 # include "Form.hpp"
 
+class Form;
+
 /**
  * @brief Bureaucrat class
  * @details Bureaucrat class
