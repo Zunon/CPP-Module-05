@@ -5,7 +5,7 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
-	: AForm(other), _target(src._target) {}
+	: AForm(other), _target(other._target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(void)
 	: AForm("RobotomyRequestForm", 72, 45) {}
@@ -13,7 +13,7 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 	: AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const char *)
+RobotomyRequestForm::RobotomyRequestForm(const char *target)
 	: AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs) {

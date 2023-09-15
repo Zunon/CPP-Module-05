@@ -90,5 +90,13 @@ bool	Bureaucrat::executeForm(AForm &form) {
 		std::cout << _name << " couldn't execute " << form.getName()
 				  << " because " << e.what() << std::endl;
 		return (false);
+	} catch (AForm::FormNotSignedException &e) {
+		std::cout << _name << " couldn't execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+		return (false);
+	} catch (AForm::GradeTooHighException &e) {
+		std::cout << _name << " couldn't execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+		return (false);
 	}
 }
